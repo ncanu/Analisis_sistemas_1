@@ -9,22 +9,21 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="779.0" style="-fx-background-color: #013C72;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="779.0" style="-fx-background-color: #013C72;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Pane layoutX="177.0" layoutY="75.0" prefHeight="472.0" prefWidth="426.0" style="-fx-background-color: ffff;">
          <children>
-            <JFXTextField layoutX="57.0" layoutY="170.0" prefHeight="31.0" prefWidth="313.0" promptText="Usuario">
+            <JFXTextField fx:id="user_textfield" layoutX="57.0" layoutY="170.0" prefHeight="31.0" prefWidth="313.0" promptText="Usuario">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField layoutX="57.0" layoutY="240.0" prefHeight="31.0" prefWidth="313.0" promptText="Contraseña">
+            <JFXPasswordField fx:id="password_textfield" layoutX="57.0" layoutY="240.0" prefHeight="31.0" prefWidth="313.0" promptText="Contraseña">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXPasswordField>
-            <JFXButton layoutX="57.0" layoutY="310.0" prefHeight="44.0" prefWidth="313.0" style="-fx-background-color: #E01A4F;" text="Iniciar sesion" textFill="WHITE">
+            <JFXButton fx:id="login_button" buttonType="RAISED" layoutX="57.0" layoutY="310.0" onAction="#login" prefHeight="44.0" prefWidth="313.0" ripplerFill="WHITE" style="-fx-background-color: #E01A4F;" text="Iniciar sesion" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -36,6 +35,7 @@
                </font>
             </Label>
             <Line endX="210.0" layoutX="213.0" layoutY="70.0" startX="-210.0" strokeMiterLimit="15.0" />
+            <Label fx:id="error_label" layoutX="92.0" layoutY="391.0" prefHeight="44.0" prefWidth="243.0" text="Error en tus credenciales, por favor intentalo de nuevo" textAlignment="CENTER" textFill="#e01a4f" visible="false" wrapText="true" />
          </children>
       </Pane>
    </children>
