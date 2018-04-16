@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.ui.dashboard.Dashboard"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.dashboard.Dashboard">
+   <left>
+      <HBox prefHeight="800.0" prefWidth="280.0" style="-fx-background-color: #013A70;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="800.0" prefWidth="280.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="84.0" prefWidth="280.0" style="-fx-background-color: #1395C1;" text="Administración" textAlignment="CENTER" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label onMouseClicked="#showHome" prefHeight="70.0" prefWidth="308.0" text="Dashboard" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="94.0" onMouseClicked="#showStudents" prefHeight="70.0" prefWidth="308.0" text="Alumnos" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="164.0" onMouseClicked="#showAcc" prefHeight="70.0" prefWidth="308.0" text="Contabilidad" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="234.0" onMouseClicked="#showInventory" prefHeight="70.0" prefWidth="308.0" text="Inventario" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </left>
+</BorderPane>

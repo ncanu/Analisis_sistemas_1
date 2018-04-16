@@ -1,8 +1,14 @@
 package sample;
 
 import com.jfoenix.controls.*;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import retrofit2.Call;
 import retrofit2.Callback;
 import sample.network.APIController;
@@ -10,6 +16,8 @@ import sample.network.RetrofitClient;
 import sample.ui.login.LoginRequest;
 import sample.ui.login.LoginResponse;
 import javafx.scene.control.Label;
+
+import java.io.IOException;
 
 public class Controller {
 
@@ -27,12 +35,13 @@ public class Controller {
 
     @FXML
     void login(ActionEvent event) {
+        error_label.setVisible(false);
         String userName = user_textfield.getText();
         String password = password_textfield.getText();
-        getToken(userName,password);
+        getToken(userName,password, event);
     }
 
-    public void getToken(final String email, final String password)
+    public void getToken(final String email, final String password, ActionEvent event)
     {
         LoginRequest tokenRequest = new LoginRequest();
         tokenRequest.setEmail(email);
@@ -49,13 +58,16 @@ public class Controller {
 
                         if(response.isSuccessful())
                         {
-                            System.out.println("Success!!");
+                            Platform.runLater(
+                                    () -> {
+                                        // Update UI here.
+                                        replaceFXML(event);
+                                    }
+                            );
                         }
                         else
                         {
-                            System.out.println("Sorry!!");
                             error_label.setVisible(true);
-
                         }
 
                     }
@@ -73,6 +85,23 @@ public class Controller {
 
             }
 
+
     }
+
+    public void replaceFXML(ActionEvent event)
+    {
+        try {
+            Parent dashboard = FXMLLoader.load(getClass().getResource("/sample/ui/dashboard/dashboard.fxml"));
+            Scene scene = new Scene(dashboard);
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 
 }
