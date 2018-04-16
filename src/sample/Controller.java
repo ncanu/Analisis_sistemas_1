@@ -34,7 +34,11 @@ public class Controller {
     private Label error_label;
 
     @FXML
+    private JFXSpinner spinner;
+
+    @FXML
     void login(ActionEvent event) {
+        spinner.setVisible(true);
         error_label.setVisible(false);
         String userName = user_textfield.getText();
         String password = password_textfield.getText();
@@ -67,6 +71,7 @@ public class Controller {
                         }
                         else
                         {
+                            spinner.setVisible(false);
                             error_label.setVisible(true);
                         }
 
@@ -74,7 +79,7 @@ public class Controller {
 
                     @Override
                     public void onFailure(Call<LoginResponse> call, Throwable t) {
-
+                        spinner.setVisible(false);
                     }
                 });
 
@@ -82,7 +87,7 @@ public class Controller {
 
             catch (NullPointerException e)
             {
-
+                spinner.setVisible(false);
             }
 
 

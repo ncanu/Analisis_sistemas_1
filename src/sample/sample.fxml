@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXSpinner?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -36,6 +37,7 @@
             </Label>
             <Line endX="210.0" layoutX="213.0" layoutY="70.0" startX="-210.0" strokeMiterLimit="15.0" />
             <Label fx:id="error_label" layoutX="92.0" layoutY="391.0" prefHeight="44.0" prefWidth="243.0" text="Error en tus credenciales, por favor intentalo de nuevo" textAlignment="CENTER" textFill="#e01a4f" visible="false" wrapText="true" />
+            <JFXSpinner fx:id="spinner" layoutX="174.0" layoutY="371.0" prefHeight="70.0" prefWidth="78.0" visible="false" />
          </children>
       </Pane>
    </children>

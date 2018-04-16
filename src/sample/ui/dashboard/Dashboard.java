@@ -27,8 +27,8 @@ public class Dashboard {
     }
 
     @FXML
-    void showStudents(MouseEvent event) {
-
+    void showStudents(MouseEvent event) throws IOException {
+        DynamicView.loadBorderCenter(border_pane, "/sample/ui/dashboard/student/student.fxml");
     }
 
 }
