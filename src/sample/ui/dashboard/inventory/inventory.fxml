@@ -11,10 +11,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.dashboard.inventory.InventoryController">
    <children>
-      <JFXListView layoutX="61.0" layoutY="111.0" prefHeight="500.0" prefWidth="248.0" />
+      <JFXListView fx:id="list" layoutX="61.0" layoutY="111.0" prefHeight="500.0" prefWidth="248.0" />
       <Pane layoutX="397.0" layoutY="111.0" prefHeight="500.0" prefWidth="465.0" style="-fx-background-color: white; -fx-border-color: black;">
          <children>
             <Label layoutX="46.0" layoutY="196.0" text="Producto">
@@ -22,19 +21,19 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="145.0" layoutY="181.0" prefHeight="31.0" prefWidth="248.0" />
+            <JFXTextField fx:id="productName" layoutX="145.0" layoutY="181.0" prefHeight="31.0" prefWidth="248.0" />
             <Label layoutX="46.0" layoutY="246.0" text="Codigo">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="145.0" layoutY="231.0" prefHeight="31.0" prefWidth="248.0" />
+            <JFXTextField fx:id="code" layoutX="145.0" layoutY="231.0" prefHeight="31.0" prefWidth="248.0" />
             <Label layoutX="46.0" layoutY="297.0" text="Existencia">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="145.0" layoutY="282.0" prefHeight="31.0" prefWidth="248.0" />
+            <JFXTextField fx:id="existence" layoutX="145.0" layoutY="282.0" prefHeight="31.0" prefWidth="248.0" />
             <ImageView fitHeight="114.0" fitWidth="134.0" layoutX="176.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/edit.png" />
