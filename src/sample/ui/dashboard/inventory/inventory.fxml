@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.ui.dashboard.inventory.InventoryController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="700.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.dashboard.inventory.InventoryController">
+   <children>
+      <JFXListView layoutX="61.0" layoutY="111.0" prefHeight="500.0" prefWidth="248.0" />
+      <Pane layoutX="397.0" layoutY="111.0" prefHeight="500.0" prefWidth="465.0" style="-fx-background-color: white; -fx-border-color: black;">
+         <children>
+            <Label layoutX="46.0" layoutY="196.0" text="Producto">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField layoutX="145.0" layoutY="181.0" prefHeight="31.0" prefWidth="248.0" />
+            <Label layoutX="46.0" layoutY="246.0" text="Codigo">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField layoutX="145.0" layoutY="231.0" prefHeight="31.0" prefWidth="248.0" />
+            <Label layoutX="46.0" layoutY="297.0" text="Existencia">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField layoutX="145.0" layoutY="282.0" prefHeight="31.0" prefWidth="248.0" />
+            <ImageView fitHeight="114.0" fitWidth="134.0" layoutX="176.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/edit.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="addAccount" buttonType="RAISED" layoutX="243.0" layoutY="383.0" prefHeight="31.0" prefWidth="152.0" style="-fx-background-color: #E01A4F;" text="Guardar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Label alignment="CENTER" layoutX="61.0" layoutY="67.0" prefHeight="21.0" prefWidth="248.0" text="Listado de suministros" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
