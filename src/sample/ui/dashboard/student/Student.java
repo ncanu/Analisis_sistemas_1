@@ -2,13 +2,24 @@ package sample.ui.dashboard.student;
 
 import com.jfoenix.controls.JFXComboBox;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import sample.ui.dashboard.DynamicView;
 import sample.ui.dashboard.student.response.CourseResponse;
 import sample.ui.dashboard.student.response.StudentResponse;
+import javafx.scene.input.MouseEvent;
 
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +67,22 @@ public class Student implements Initializable {
 
         table.getItems().setAll(studentResponseList);
 
+
+
+    }
+
+    @FXML
+    void addStudent(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/ui/dashboard/student/create/createStudent.fxml"));
+        Node source = (Node)  event.getSource();
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner((Stage) source.getScene().getWindow());
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setTitle("Estudiante");
+        stage.setScene(new Scene(root1));
+        stage.show();
 
 
     }
