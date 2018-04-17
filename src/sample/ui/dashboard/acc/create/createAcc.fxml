@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="700.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.dashboard.acc.create.CreateAccController">
+<AnchorPane prefHeight="700.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.dashboard.acc.create.CreateAccController">
    <children>
       <Pane layoutX="182.0" layoutY="60.0" prefHeight="581.0" prefWidth="557.0" style="-fx-border-color: #013A70; -fx-background-color: white;">
          <children>
@@ -41,7 +40,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXComboBox layoutX="233.0" layoutY="147.0" prefHeight="31.0" prefWidth="225.0" />
+            <JFXComboBox fx:id="bank" layoutX="233.0" layoutY="147.0" prefHeight="31.0" prefWidth="225.0" />
          </children>
       </Pane>
    </children>
