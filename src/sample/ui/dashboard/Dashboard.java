@@ -15,8 +15,8 @@ public class Dashboard implements Initializable {
     private BorderPane border_pane; // Value injected by FXMLLoader
 
     @FXML
-    void showAcc(MouseEvent event) {
-
+    void showAcc(MouseEvent event) throws IOException {
+        DynamicView.loadBorderCenter(border_pane, "/sample/ui/dashboard/acc/acc.fxml");
     }
 
     @FXML
@@ -25,13 +25,18 @@ public class Dashboard implements Initializable {
     }
 
     @FXML
-    void showInventory(MouseEvent event) {
-
+    void showInventory(MouseEvent event) throws IOException {
+        DynamicView.loadBorderCenter(border_pane, "/sample/ui/dashboard/inventory/inventory.fxml");
     }
 
     @FXML
     void showStudents(MouseEvent event) throws IOException {
         DynamicView.loadBorderCenter(border_pane, "/sample/ui/dashboard/student/student.fxml");
+    }
+
+    @FXML
+    void showProfessors(MouseEvent event) throws IOException {
+        DynamicView.loadBorderCenter(border_pane, "/sample/ui/dashboard/courses/courses.fxml");
     }
 
     public void initialize(URL location, ResourceBundle resources)  {

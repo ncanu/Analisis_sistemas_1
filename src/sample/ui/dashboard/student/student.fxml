@@ -11,8 +11,8 @@
 
 <AnchorPane prefHeight="698.0" prefWidth="920.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.dashboard.student.Student">
    <children>
-      <JFXComboBox fx:id="course_combobox" layoutX="256.0" layoutY="84.0" prefHeight="31.0" prefWidth="410.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="256.0" layoutY="50.0" prefHeight="21.0" prefWidth="410.0" text="Por favor seleccione el curso" textAlignment="CENTER" textFill="#0c090d" />
+      <JFXComboBox fx:id="course_combobox" layoutX="275.0" layoutY="79.0" prefHeight="31.0" prefWidth="370.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="49.0" layoutY="84.0" prefHeight="21.0" prefWidth="211.0" text="Por favor seleccione el curso" textAlignment="CENTER" textFill="#0c090d" />
       <TableView fx:id="table" layoutX="49.0" layoutY="152.0" prefHeight="465.0" prefWidth="823.0">
         <columns>
           <TableColumn id="carnet" fx:id="carnet" prefWidth="184.0" text="Carnet" />
@@ -20,7 +20,7 @@
             <TableColumn id="lastName" fx:id="lastName" minWidth="0.0" prefWidth="298.0" text="Apellido" />
         </columns>
       </TableView>
-      <JFXButton fx:id="addStudentButton" buttonType="RAISED" layoutX="735.0" layoutY="45.0" prefHeight="31.0" prefWidth="152.0" style="-fx-background-color: #E01A4F;" text="+ Añadir Nuevo" textFill="WHITE">
+      <JFXButton fx:id="addStudentButton" buttonType="RAISED" layoutX="720.0" layoutY="79.0" prefHeight="31.0" prefWidth="152.0" style="-fx-background-color: #E01A4F;" text="+ Añadir Nuevo" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
