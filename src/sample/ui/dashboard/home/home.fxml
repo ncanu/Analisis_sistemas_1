@@ -1,11 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.dashboard.home.Home">
+<AnchorPane prefHeight="800.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ui.dashboard.home.Home">
    <children>
-      <Label layoutX="274.0" layoutY="200.0" text="Welcome Home" />
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="78.0" prefWidth="920.0">
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" height="10.0" radius="4.5" width="10.0" />
+         </effect>
+         <children>
+            <Label layoutX="68.0" layoutY="24.0" style="-fx-font-weight: normal; -fx-font-size: 25; -fx-text-fill: #013A70;" text="Información General" />
+         </children>
+      </Pane>
+      <Pane layoutY="81.0" prefHeight="720.0" prefWidth="920.0" style="-fx-background-color: #F3F3F3;">
+         <children>
+            <VBox layoutX="66.0" layoutY="34.0" prefHeight="285.0" prefWidth="240.0" style="-fx-border-color: #013C72; -fx-background-color: white;">
+               <children>
+                  <ImageView fitHeight="124.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="55.0" top="15.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../images/student.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="250.0" style="-fx-font-weight: bold;" text="Estudiantes" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label prefHeight="67.0" prefWidth="238.0" text="Actualmente hay 0 estudiantes registrados en el sistema" textAlignment="CENTER" wrapText="true" />
+               </children>
+            </VBox>
+            <VBox layoutX="343.0" layoutY="34.0" prefHeight="285.0" prefWidth="240.0" style="-fx-border-color: #013C72; -fx-background-color: white;">
+               <children>
+                  <ImageView fitHeight="124.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/teacher.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="55.0" top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="250.0" style="-fx-font-weight: bold;" text="Catedraticos" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label prefHeight="67.0" prefWidth="238.0" text="Actualmente hay 0 catedraticos registrados en el sistema" textAlignment="CENTER" wrapText="true" />
+               </children>
+            </VBox>
+            <VBox layoutX="615.0" layoutY="34.0" prefHeight="285.0" prefWidth="240.0" style="-fx-border-color: #013C72; -fx-background-color: white;">
+               <children>
+                  <ImageView fitHeight="124.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/clerk.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="55.0" top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="250.0" style="-fx-font-weight: bold;" text="Recursos Humanos" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label prefHeight="67.0" prefWidth="238.0" text="Actualmente hay 0 personas como recurso humano" textAlignment="CENTER" wrapText="true" />
+               </children>
+            </VBox>
+            <VBox layoutX="66.0" layoutY="347.0" prefHeight="285.0" prefWidth="240.0" style="-fx-border-color: #013C72; -fx-background-color: white;">
+               <children>
+                  <ImageView fitHeight="124.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="55.0" top="15.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../images/change.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="250.0" style="-fx-font-weight: bold;" text="Solvencia" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="238.0" text="Actualmente hay 0 alumnos insolventes en el sistema" textAlignment="CENTER" wrapText="true">
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="343.0" layoutY="347.0" prefHeight="285.0" prefWidth="240.0" style="-fx-border-color: #013C72; -fx-background-color: white;">
+               <children>
+                  <ImageView fitHeight="124.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="55.0" top="15.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../images/credit-card.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="250.0" style="-fx-font-weight: bold;" text="Cuentas Bancarias" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="195.0" text="Actualmente las cuentas bancarias reflejan un balance de Q. 0.00 " textAlignment="CENTER" wrapText="true">
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="615.0" layoutY="347.0" prefHeight="285.0" prefWidth="240.0" style="-fx-border-color: #013C72; -fx-background-color: white;">
+               <children>
+                  <ImageView fitHeight="124.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="55.0" top="15.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../images/edit.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="250.0" style="-fx-font-weight: Bold;" text="Suministros" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="238.0" text="Actualmente no hay falta de suministros" textAlignment="CENTER" wrapText="true">
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -1,12 +1,15 @@
 package sample.ui.dashboard;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Dashboard {
+public class Dashboard implements Initializable {
 
     @FXML // fx:id="border_pane"
     private BorderPane border_pane; // Value injected by FXMLLoader
@@ -29,6 +32,14 @@ public class Dashboard {
     @FXML
     void showStudents(MouseEvent event) throws IOException {
         DynamicView.loadBorderCenter(border_pane, "/sample/ui/dashboard/student/student.fxml");
+    }
+
+    public void initialize(URL location, ResourceBundle resources)  {
+        try {
+            DynamicView.loadBorderCenter(border_pane, "/sample/ui/dashboard/home/home.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
