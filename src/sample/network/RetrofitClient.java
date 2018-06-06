@@ -1,5 +1,7 @@
 package sample.network;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -21,6 +23,9 @@ public class RetrofitClient {
 
     public static Retrofit setClient(final String myToken)
     {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, false);
+        objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         if(!myToken.equals(""))
         {
             OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
@@ -46,7 +51,7 @@ public class RetrofitClient {
             retrofit = new Retrofit.Builder()
                     .baseUrl(baseURL)
                     .client(client2)
-                    .addConverterFactory(JacksonConverterFactory.create())
+                    .addConverterFactory(JacksonConverterFactory.create(objectMapper))
                     .build();
 
         }
@@ -57,7 +62,7 @@ public class RetrofitClient {
             retrofit = new Retrofit.Builder()
                     .baseUrl(baseURL)
 //                    .client(new OkHttpClient())
-                    .addConverterFactory(JacksonConverterFactory.create())
+                    .addConverterFactory(JacksonConverterFactory.create(objectMapper))
                     .build();
         }
 

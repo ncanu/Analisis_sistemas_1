@@ -61,19 +61,19 @@ public class Student implements Initializable {
         courseResponse.setSection("A");
         course_combobox.getItems().add(courseResponse);
 
-        List<StudentResponse> studentResponseList = new ArrayList<>();
-        StudentResponse studentResponse = new StudentResponse();
-        studentResponse.setName("Luis");
-        studentResponse.setLastName("Blanco");
-        studentResponse.setId(1L);
-        studentResponse.setCarnet("0901-15-13765");
-        studentResponseList.add(studentResponse);
+//        List<StudentResponse> studentResponseList = new ArrayList<>();
+//        StudentResponse studentResponse = new StudentResponse();
+//        studentResponse.setName("Luis");
+//        studentResponse.setLastName("Blanco");
+//        studentResponse.setId(1L);
+//        studentResponse.setCarnet("0901-15-13765");
+//        studentResponseList.add(studentResponse);
 
         carnet.setCellValueFactory(new PropertyValueFactory<StudentResponse, String>("carnet"));
         name.setCellValueFactory(new PropertyValueFactory<StudentResponse, String>("name"));
         lastName.setCellValueFactory(new PropertyValueFactory<StudentResponse, String>("lastName"));
 
-        table.getItems().setAll(studentResponseList);
+//        table.getItems().setAll(studentResponseList);
             getAllUsers();
 
 
@@ -97,8 +97,6 @@ public class Student implements Initializable {
 
     public void getAllUsers()
     {
-
-
         try{
             APIController client = RetrofitClient.getClient().create(APIController.class);
             Call<StudentCompleteResponse> call = client.getAllUsers();
