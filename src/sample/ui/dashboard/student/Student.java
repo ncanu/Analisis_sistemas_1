@@ -1,6 +1,8 @@
 package sample.ui.dashboard.student;
 
 import com.jfoenix.controls.JFXComboBox;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,8 +15,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.json.JSONObject;
+import retrofit2.Call;
+import retrofit2.Callback;
+import sample.network.APIController;
+import sample.network.RetrofitClient;
 import sample.ui.dashboard.DynamicView;
 import sample.ui.dashboard.student.response.CourseResponse;
+import sample.ui.dashboard.student.response.StudentCompleteResponse;
 import sample.ui.dashboard.student.response.StudentResponse;
 import javafx.scene.input.MouseEvent;
 
@@ -66,7 +74,7 @@ public class Student implements Initializable {
         lastName.setCellValueFactory(new PropertyValueFactory<StudentResponse, String>("lastName"));
 
         table.getItems().setAll(studentResponseList);
-
+            getAllUsers();
 
 
     }
@@ -83,6 +91,61 @@ public class Student implements Initializable {
         stage.setTitle("Estudiante");
         stage.setScene(new Scene(root1));
         stage.show();
+
+
+    }
+
+    public void getAllUsers()
+    {
+
+
+        try{
+            APIController client = RetrofitClient.getClient().create(APIController.class);
+            Call<StudentCompleteResponse> call = client.getAllUsers();
+
+            call.enqueue(new Callback<StudentCompleteResponse>() {
+                @Override
+                public void onResponse(Call<StudentCompleteResponse> call, retrofit2.Response<StudentCompleteResponse> response) {
+
+
+                    if(response.isSuccessful())
+                    {
+                        Platform.runLater(
+                                () -> {
+                                    // Update UI here.
+
+                                        table.getItems().setAll(response.body().getData());
+
+                                }
+                        );
+                    }
+                    else
+                    {
+                        JSONObject jObjError = null;
+                        try {
+                            jObjError = new JSONObject(response.errorBody().string());
+                            System.out.println(jObjError.getString("message"));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<StudentCompleteResponse> call, Throwable t) {
+                    System.out.println(call);
+                }
+            });
+
+        }
+
+        catch (NullPointerException e)
+        {
+
+        }
 
 
     }

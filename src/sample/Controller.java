@@ -65,6 +65,7 @@ public class Controller {
                             Platform.runLater(
                                     () -> {
                                         // Update UI here.
+                                        RetrofitClient.setClient("Bearer "+response.body().getData().getToken());
                                         replaceFXML(event);
                                     }
                             );

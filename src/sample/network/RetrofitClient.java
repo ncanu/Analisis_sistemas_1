@@ -34,6 +34,8 @@ public class RetrofitClient {
                     Request.Builder requestBuilder = original.newBuilder()
                             .header("Authorization", myToken); // <-- this is the important line
 
+                    System.out.println(myToken);
+
                     Request request = requestBuilder.build();
                     return chain.proceed(request);
                 }

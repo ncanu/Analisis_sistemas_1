@@ -1,6 +1,7 @@
 package sample.ui.dashboard.student.response
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import java.util.*
 
 open class StudentResponse
 {
@@ -16,5 +17,9 @@ open class StudentResponse
     @JsonProperty
     var carnet: String? = null
 
+    @JsonProperty
+    var email: String? = null
 
+    @JsonProperty
+    var createdAt: Date? = null
 }
